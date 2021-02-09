@@ -1,0 +1,81 @@
+.davidmodal-container {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.davidmodal-content {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 20px 10px rgba(0,0,0,0.5);
+    width: 80vw;
+    height: 80vh
+}
+
+.davidmodal-x {
+    cursor: pointer;
+    position: absolute;
+    top: 10vh;
+    right: 10vw;
+    border-left: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(150, 150, 150);
+    border-top-right-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    width: 30px;
+    height: 30px;
+}
+
+.davidmodal-x::after, .davidmodal-x::before {
+    content: '';
+    position: absolute;
+    width: 29px;
+    height: 2px;
+    background-color: rgb(150, 150, 150);
+    border-radius: 0.25rem;
+    top: 13px;
+    right: 0px;
+}
+
+.davidmodal-x::before {
+    transform: rotate(45deg);
+}
+
+.davidmodal-x::after {
+    transform: rotate(-45deg);
+}
+
+.davidmodal-x:hover {
+    background-color: rgb(150, 150, 150);
+    border: 1px solid rgb(230, 230, 230);
+}
+
+.davidmodal-x:hover::after, .davidmodal-x:hover::before {
+    background-color: rgb(230, 230, 230);
+}
+
+/* These classes help with the fadein/fadeout of the modal. They shouldn't be set directly.
+Utilize the javascript functions to toggle display of modal. */
+.showdavidmodal
+{
+    opacity: 1;
+    animation: fadeInDavidModal 0.25s;
+}
+
+.hidedavidmodal
+{
+    opacity: 0;
+    animation: fadeOutDavidModal 0.25s;
+}
+@keyframes fadeInDavidModal
+{ from { opacity: 0; }
+    to { opacity: 1; } }
+@keyframes fadeOutDavidModal
+{ from { opacity: 1; }
+    to { opacity: 0; } }
