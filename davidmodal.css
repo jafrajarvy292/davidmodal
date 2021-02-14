@@ -10,6 +10,7 @@
 }
 
 .davidmodal-content {
+    border-width: 0px;
     display: block;
     margin-left: auto;
     margin-right: auto;
