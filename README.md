@@ -36,7 +36,8 @@ To display a link within a modal window, give the element a class of ```davidmod
     <a href="https://www.verizon.com" class="davidmodal">Click here to bring up Verizon's website as a modal</a>
     <br />
     <br />
-    <button href="/sample.html" class="davidmodal">Click here to bring up a page within your current site as a modal</button>
+    <button href="/sample.html" class="davidmodal">Click here to bring up a page
+    within your current site as a modal</button>
     <script src="davidmodal.js"></script>
 </body>
 </html>
