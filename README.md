@@ -74,9 +74,9 @@ Every modal that is displayed can be closed via the "x" button that appears at t
 
 The library comes with several methods that can be called to trigger "close" behaviors. These allow you to close the modal on your own terms, instead of relying on the user to click the "x" button.
 
-- `jafrajarvy292.DavidModal.hideModal(object = undefined, callback = undefined)` - This will fade out the target modal. If a callback function is passed in, it will run the callback after the fade effect is done.
-- `jafrajarvy292.DavidModal.hideRemoveModal(object = undefined, callback = undefined)` - This will fade out the target modal, then remove it from the DOM. If a callback function is passed in, it will run the callback after the fade out animation is complete.
-- `jafrajarvy292.DavidModal.removeModal(object = undefined)` - This will remove the target modal from the DOM immediately. There will not be any fade out effect.
+- `jafrajarvy292.DavidModal.hideModal(object = undefined, callback = undefined)` - This will fade out the target modal. If a callback function is passed in, it will run the callback after the fade effect is done. This method is intended to be used with modals that display a section of the current page.
+- `jafrajarvy292.DavidModal.hideRemoveModal(object = undefined, callback = undefined)` - This will fade out the target modal, then remove it from the DOM. If a callback function is passed in, it will run the callback after the fade out animation is complete. This method is intended to be used with modals that display a URL as an iframe.
+- `jafrajarvy292.DavidModal.removeModal(object = undefined)` - This will remove the target modal from the DOM immediately. There will not be any fade out effect. This method is intended to be used with modals that display a URL as an iframe.
 
 Like the `showModal()` method, the elements pass into these methods do not need to be the modal container (the one with a `davidmodal-container` class). It could be any element that is contained within a modal container and, if so, the library will search for the nearest ancestor that has the `davidmodal-container` class and apply the method to that. Finally, these methods don't require that pass in an element. Since only one modal window can be displayed at a time, if you do not pass in an element, the library will search for the modal currently being displayed and apply the method to that.
 
