@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../davidmodal.css">
+</head>
+<body>
+    <a href="https://www.verizon.com" class="davidmodal">Click here to bring up Verizon's website as a modal</a>
+    <br />
+    <br />
+    <button href="child.html" class="davidmodal">Click here to bring up a page within your current site as a modal</button>
+    <br />
+    <br />
+    <button id="show_button">Click to display a hidden section of the page</button>
+    <div id="the_section" class="davidmodal" style="display: none;">
+        <p>Hello, this section isn't coming from another page on the site.</p>
+        <p>It's a div that sits just below the button you clicked.</p>
+        <p>When the page was loaded, the presence of the davidmodal class on this div caused our library to create the necessary
+        modal elements and move this div into it to ensure it would appear as a modal.</p>
+        <p>An event listener attached to the button is causing this to fade into view</p>
+        <p>You can click the below button to fade this out of view or click on the x at the top-right</p>
+        <p>You can confirm this section is being hidden, as opposed to being removed from the DOM, by changing the default
+        text of the below text box and closing this modal. You'll see your modified text remains when you bring it back into view.</p>
+        <textarea>Default Text</textarea>
+        <br />
+        <button id="close_button">Close Me</button>
+    </div>
+    <script src="../davidmodal.js"></script>
+    <script>
+        document.getElementById('show_button').addEventListener('click', function() {
+            jafrajarvy292.DavidModal.showModal(document.getElementById('the_section'));
+        });
+        document.getElementById('close_button').addEventListener('click', function() {
+            jafrajarvy292.DavidModal.hideModal();
+        });
+    </script>
+</body>
+</html>

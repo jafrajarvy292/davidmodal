@@ -36,7 +36,6 @@ jafrajarvy292.DavidModal = class {
         /* Browsers will vary in what value is used for when the background-color is transparent, so we create
         a test element and grab its background-color value. This value is what the current browser uses to
         indicate a transparent color. */
-        console.log('Obtaining <body> background-color value...');
         let sampleElement = document.createElement('p');
         sampleElement.style.display = 'none';
         document.body.appendChild(sampleElement);

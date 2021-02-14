@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+<body>
+    <h1>Sample Page</h1>
+    <p>Hello there, this is a sample page</p>
+    <p>We're currently using an iframe to display this. Clicking the x button at the top-right will fade out and remove this modal from the DOM. That is the default behavior of the x button for iframe type modals.</p>
+    <p>The below button will run the hideRemoveModal() function from the parent, which will cause this modal to fade out, then be removed from the DOM</p>
+    <p>You can verify this modal is being removed from the DOM and not just hidden by changing the default text below and then bringing this modal into view again. You'll see the default text comes back.</p>
+    <textarea>Default Text</textarea>
+    <br />
+    <br />
+    <p>If you're viewing the index.html file from the local file system and not through a webserver, the below button might not work
+    correctly, due to CORS restrictions.</p>
+    <button onclick="parent.jafrajarvy292.DavidModal.hideRemoveModal()">Close Me</button>
+</body>
+</html>
