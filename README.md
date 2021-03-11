@@ -89,5 +89,5 @@ In scenarios where a hyperlink is being displayed as a modal window (i.e. via if
 
 ## Notes
 - I recommend you download the sample files to get a feel for how the library works. You may also read through the comments in the javascript file to see details of each method.
-- The classes found within the library's CSS file are intended to be used by the library only. They are not meant for you to apply directly to your elements. The only class you should be applying directly to your elements is `davidmodal`. 
+- The classes found within the library's CSS file are intended to be used by the library only. They are not meant for you to apply directly to your elements. The only class you should be applying directly to your elements is `davidmodal` and any optional ones that have been specifically mentioned.
 - If you need to override any of the library's default CSS values, you can consider adding a `<style>` section to the beginning of your HTML and redefining any of the class styles, such as opacity, animation duration, widths, etc.
