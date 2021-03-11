@@ -84,6 +84,9 @@ Like the `showModal()` method, the elements pass into these methods do not need 
 In scenarios where a hyperlink is being displayed as a modal window (i.e. via iframe), you may sometimes want to close the modal through an event listener attached to the child/iframe. To do that, you'll need to call the method through the parent window. Below is an example method you'd call from within the child window to force the parent window to run the `hideRemoveModal()` method:
 `parent.jafrajarvy292.DavidModal.hideRemoveModal();`
 
+## Optional Features
+- `davidmodal-x-refresh` - Adding this class to the same element where `davidmodal` is placed will enhance the x button to not only fade out and hide the modal, but to also refresh the page afterwards. If the modal is an iframe, then clicking the x will refresh the parent page, instead.
+
 ## Notes
 - I recommend you download the sample files to get a feel for how the library works. You may also read through the comments in the javascript file to see details of each method.
 - The classes found within the library's CSS file are intended to be used by the library only. They are not meant for you to apply directly to your elements. The only class you should be applying directly to your elements is `davidmodal`. 

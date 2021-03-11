@@ -121,9 +121,18 @@ jafrajarvy292.DavidModal = class {
         from the DOM */
         let modalX = document.createElement('div');
         modalX.classList.add('davidmodal-x');
-        modalX.addEventListener('click', function() {
-            jafrajarvy292.DavidModal.hideRemoveModal(modalContainer);
-        });
+        /* If the element has a class of 'davidmodal-x-refresh', then clicking the x will refresh the parent
+        page after the removal. If it doesn't, then it will just remove */
+        if (element.classList.contains('davidmodal-x-refresh')) {
+            modalX.addEventListener('click', function() {
+                jafrajarvy292.DavidModal.hideRemoveModal(modalContainer, parent.window.location.reload());
+            });
+        } else {
+            modalX.addEventListener('click', function() {
+                jafrajarvy292.DavidModal.hideRemoveModal(modalContainer);
+            });
+        }
+        
 
         //Append iframe and close button to the modal container
         modalContainer.appendChild(modalContent);
