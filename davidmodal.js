@@ -80,9 +80,18 @@ jafrajarvy292.DavidModal = class {
         //Create the x button and attach event listener. Clicking the x hides the modal
         let modalX = document.createElement('div');
         modalX.classList.add('davidmodal-x');
-        modalX.addEventListener('click', function() {
-            jafrajarvy292.DavidModal.hideModal(modalContainer);
-        });
+        
+        if (element.classList.contains('davidmodal-x-refresh')) {
+            modalX.addEventListener('click', function() {
+                jafrajarvy292.DavidModal.hideModal(modalContainer, function() {
+                    window.location.reload()
+                });
+            });
+        } else {
+            modalX.addEventListener('click', function() {
+                jafrajarvy292.DavidModal.hideModal(modalContainer);
+            });
+        }
 
         //Append the modal content container and close button to the modal container
         modalContainer.appendChild(modalContent);
@@ -125,7 +134,9 @@ jafrajarvy292.DavidModal = class {
         page after the removal. If it doesn't, then it will just remove */
         if (element.classList.contains('davidmodal-x-refresh')) {
             modalX.addEventListener('click', function() {
-                jafrajarvy292.DavidModal.hideRemoveModal(modalContainer, parent.window.location.reload());
+                jafrajarvy292.DavidModal.hideRemoveModal(modalContainer, function() {
+                    parent.window.location.reload();
+                });
             });
         } else {
             modalX.addEventListener('click', function() {
