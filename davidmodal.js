@@ -223,6 +223,11 @@ jafrajarvy292.DavidModal = class {
      */
     static hideModal(object = undefined, callback = undefined)
     {
+        if (typeof object === 'function') {
+            callback = object;
+            object = undefined;
+        }
+
         let currentObject = object;
         /* Make sure the element being passed in has a "davidmodal-container". If it doesn't, find the nearest
         ancestor that does */
@@ -302,6 +307,11 @@ jafrajarvy292.DavidModal = class {
      */
     static hideRemoveModal(object = undefined, callback = undefined)
     {
+        if (typeof object === 'function') {
+            callback = object;
+            object = undefined;
+        }
+
         let currentObject = object;
         /* Make sure the element being passed in has a "davidmodal-container". If it doesn't, find the nearest
         ancestor that does */
