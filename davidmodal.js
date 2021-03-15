@@ -81,7 +81,12 @@ jafrajarvy292.DavidModal = class {
         let modalX = document.createElement('div');
         modalX.classList.add('davidmodal-x');
         
-        if (element.classList.contains('davidmodal-x-refresh')) {
+        if (element.classList.contains('davidmodal-x-refresha')) {
+            modalX.addEventListener('click', function() {
+                jafrajarvy292.DavidModal.hideModal(modalContainer);
+                window.location.reload();
+            });
+        } else if (element.classList.contains('davidmodal-x-refreshs')) {
             modalX.addEventListener('click', function() {
                 jafrajarvy292.DavidModal.hideModal(modalContainer, function() {
                     window.location.reload()
@@ -132,7 +137,12 @@ jafrajarvy292.DavidModal = class {
         modalX.classList.add('davidmodal-x');
         /* If the element has a class of 'davidmodal-x-refresh', then clicking the x will refresh the parent
         page after the removal. If it doesn't, then it will just remove */
-        if (element.classList.contains('davidmodal-x-refresh')) {
+        if (element.classList.contains('davidmodal-x-refresha')) {
+            modalX.addEventListener('click', function() {
+                jafrajarvy292.DavidModal.hideRemoveModal(modalContainer);
+                parent.window.location.reload();
+            });
+        } else if (element.classList.contains('davidmodal-x-refreshs')) {
             modalX.addEventListener('click', function() {
                 jafrajarvy292.DavidModal.hideRemoveModal(modalContainer, function() {
                     parent.window.location.reload();

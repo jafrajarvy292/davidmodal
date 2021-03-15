@@ -85,7 +85,8 @@ In scenarios where a hyperlink is being displayed as a modal window (i.e. via if
 `parent.jafrajarvy292.DavidModal.hideRemoveModal();`
 
 ## Optional Features
-- `davidmodal-x-refresh` - Adding this class to the same element where `davidmodal` is placed will enhance the x button to not only fade out and hide the modal, but to also refresh the page afterwards. If the modal is an iframe, then clicking the x will refresh the parent page, instead.
+- `davidmodal-x-refresha` - Asynchronous refresh. Adding this class to the same element where `davidmodal` is placed will enhance the x button to also refresh the page. If the modal is an iframe, then then it will refresh the parent page. The refresh will occur at the same time the modal is fading out, giving the refresh process a head start. Note that this may cause the fade out animation to be cut short.
+- `davidmodal-x-refreshs` - Similar to the `davidmodal-x-refresha` class, but the refresh is done synchronously. That is, it triggers after the fade out animation is complete.
 
 ## Notes
 - I recommend you download the sample files to get a feel for how the library works. You may also read through the comments in the javascript file to see details of each method.
