@@ -23,7 +23,7 @@ When the page is loaded, the script will look for all elements with a class of `
 `jafrajarvy292.DavidModal.showModal(element);`
 
 ## Displaying a Hyperlink as a Modal Window
-To display a link within a modal window, as opposed to having the browser navigate to the URL, give the element a class of `davidmodal` and ensure it has an `href` attribute. The library will add a `click` event listener to that element. When it is clicked, a modal is created on-the-spot and faded in with the target displayed within it. When the "x" button that appears at the top-right of the modal is clicked, the modal is faded out and removed from the DOM. The library does not require that the link be contained with an `<a href>` element. Any element that has the `davidmodal` class and an `href` attribute will be processed into a modal. Sample below of an `<a href>` approach and one using a `<button>`:
+To display a link within a modal window, as opposed to having the browser navigate to the URL, give the element a class of `davidmodal` and ensure it has either an `href` or a `data-davidmodalhref` attribute with the value being the target URL. The library will add a `click` event listener to that element. When it is clicked, a modal is created on-the-spot and faded in with the target displayed within it. When the "x" button that appears at the top-right of the modal is clicked, the modal is faded out and removed from the DOM. The library does not require that the link be contained with an `<a>` element. Any element that has the `davidmodal` class and either an `href` or `data-davidmodalhref` attribute will be processed into a modal. Sample below of an `<a>` approach and one using a `<button>`:
 ```
 <!DOCTYPE html>
 <html>

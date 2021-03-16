@@ -128,7 +128,11 @@ jafrajarvy292.DavidModal = class {
         //Create the iframe
         let modalContent = document.createElement('iframe');
         modalContent.classList.add('davidmodal-content');
-        modalContent.src = element.getAttribute('href');
+        if (element.getAttribute('href') !== null) {
+            modalContent.src = element.getAttribute('href');
+        } else {
+            modalContent.src = element.getAttribute('data-davidmodalhref');
+        }
         modalContent.style.backgroundColor = jafrajarvy292.DavidModal.iFrameBgColor;
 
         /* Create the x button for closing. Closing means we'll fade out and then remove the modal
@@ -175,10 +179,12 @@ jafrajarvy292.DavidModal = class {
         //Loops through all elements that have a class of "davidmodal"
         let elements = document.getElementsByClassName('davidmodal');
         for (let i = 0; i < elements.length; i++) {
-            /* If the element does not have an href attribute value, then user likely wants to display the
-            container within a modal. We'll swap out the element with its modal equivalent.
-            The user is still responsible for creating an event listener to fade in this modal */
-            if (elements[i].getAttribute('href') === null || elements[i].getAttribute('href').trim() === '') {
+            /* If the element does not have an href nor a data-davidmodalhref attribute value,
+            then user likely wants to display the container within a modal. We'll swap out the
+            element with its modal equivalent. The user is still responsible for creating an
+            event listener to fade in this modal */
+            if (elements[i].getAttribute('href') === null &&
+                elements[i].getAttribute('data-davidmodalhref') === null) {
                 jafrajarvy292.DavidModal.privateSwapWithModal(elements[i]);
             /* If element has href attribute value, then the user wants to dispay this as an iframe. */
             } else {
