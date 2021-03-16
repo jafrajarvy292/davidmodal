@@ -75,9 +75,9 @@ Every modal that is displayed can be closed via the "x" button that appears at t
 The library comes with several methods that can be called to trigger "close" behaviors. These allow you to close the modal on your own terms, instead of relying on the user to click the "x" button.
 
 - `jafrajarvy292.DavidModal.hideModal(object = undefined, callback = undefined)` - This will fade out the target modal. If a callback function is passed in, it will run the callback after the fade effect is done. This method is intended to be used with modals that display a section of the current page. You may also pass in only a callback function without the target modal, treating the function like the following:  
-`jafrajarvy292.DavidModal.hideModal(callback = undefined)`<br />
+`jafrajarvy292.DavidModal.hideModal(callback = undefined)`
 - `jafrajarvy292.DavidModal.hideRemoveModal(object = undefined, callback = undefined)` - This will fade out the target modal, then remove it from the DOM. If a callback function is passed in, it will run the callback after the fade out animation is complete. This method is intended to be used with modals that display a URL as an iframe. You may also pass in only a callback function without the target modal, treating the function like the following:  
-`jafrajarvy292.DavidModal.hideRemoveModal(callback = undefined)`<br />
+`jafrajarvy292.DavidModal.hideRemoveModal(callback = undefined)`
 - `jafrajarvy292.DavidModal.removeModal(object = undefined)` - This will remove the target modal from the DOM immediately. There will not be any fade out effect. This method is intended to be used with modals that display a URL as an iframe.
 
 Like the `showModal()` method, the elements pass into these methods do not need to be the modal container (the one with a `davidmodal-container` class). It could be any element that is contained within a modal container and, if so, the library will search for the nearest ancestor that has the `davidmodal-container` class and apply the method to that. Finally, these methods don't require that you pass in an element, at all. Since only one modal window can be displayed at a time, if you do not pass in an element, the library will search for the modal currently being displayed and apply the method to that.
@@ -86,9 +86,17 @@ Like the `showModal()` method, the elements pass into these methods do not need 
 In scenarios where a hyperlink is being displayed as a modal window (i.e. via iframe), you may sometimes want to close the modal through an event listener attached to the child/iframe. To do that, you'll need to call the method through the parent window. Below is an example method you'd call from within the child window to force the parent window to run the `hideRemoveModal()` method:
 `parent.jafrajarvy292.DavidModal.hideRemoveModal();`
 
-## Optional Features
+## Extra Stuff
 - `davidmodal-x-refresha` - Asynchronous refresh. Adding this class to the same element where `davidmodal` is placed will enhance the x button to also refresh the page. If the modal is an iframe, then then it will refresh the parent page. The refresh will occur at the same time the modal is fading out, giving the refresh process a head start. Note that this may cause the fade out animation to be cut short.
 - `davidmodal-x-refreshs` - Similar to the `davidmodal-x-refresha` class, but the refresh is done synchronously. That is, it triggers after the fade out animation is complete.
+- The event listener this library creates to trigger the display of the modal is a `click` event. If you need an element that doesn't support a `click` event to trigger the modal, create a separate event listener to trigger the `click()` method on the element. For example:
+```
+document.getElementById('my_dropdown').addEventListener('change', function(e) {
+    if (e.target.value === 'edit') {
+        document.getElementById('my_modal').click();
+    }
+});
+```
 
 ## Notes
 - I recommend you download the sample files to get a feel for how the library works. You may also read through the comments in the javascript file to see details of each method.
