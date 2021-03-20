@@ -81,3 +81,27 @@ Utilize the javascript functions to toggle display of modal. */
 @keyframes fadeOutDavidModal
 { from { opacity: 1; }
     to { opacity: 0; } }
+
+.davidmodal-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50%;
+    border: 0.5vw solid;
+	border-top-color: rgb(230, 230, 230);
+	border-bottom-color: rgb(255, 221, 142);
+	border-left-color: rgb(25, 25, 25);
+	border-right-color: rgb(139, 101, 8);
+	width: 7vw;
+	height: 7vw;
+	animation: loadingDavidModal 1500ms ease-in-out infinite;
+}
+
+@keyframes loadingDavidModal
+{
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+}

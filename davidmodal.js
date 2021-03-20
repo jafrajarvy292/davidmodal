@@ -124,9 +124,16 @@ jafrajarvy292.DavidModal = class {
         //Create the modal container
         let modalContainer = document.createElement('div');
         modalContainer.classList.add('davidmodal-container');
+
+        //Create the loading animation container
+        let modalLoading = document.createElement('div');
+        modalLoading.classList.add('davidmodal-loading');
         
         //Create the iframe
         let modalContent = document.createElement('iframe');
+
+        modalContent.id = 'davidmodalactiveframe';
+
         modalContent.classList.add('davidmodal-content');
         if (element.getAttribute('href') !== null) {
             modalContent.src = element.getAttribute('href');
@@ -157,9 +164,15 @@ jafrajarvy292.DavidModal = class {
                 jafrajarvy292.DavidModal.hideRemoveModal(modalContainer);
             });
         }
-        
 
+        /* When iframe is done loading, remove the loading animation and the event listener, so it
+        doesn't trigger again as the user interacts with it. */
+        modalContent.addEventListener('load', function() {
+                modalLoading.parentElement.removeChild(modalLoading);
+        }, { once: true});
+        
         //Append iframe and close button to the modal container
+        modalContainer.appendChild(modalLoading);
         modalContainer.appendChild(modalContent);
         modalContainer.appendChild(modalX);
 
