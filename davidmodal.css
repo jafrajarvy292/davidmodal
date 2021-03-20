@@ -90,13 +90,13 @@ Utilize the javascript functions to toggle display of modal. */
     bottom: 0;
     margin: auto;
     border-radius: 50%;
-    border: 0.5vw solid;
+    border: 5px solid;
 	border-top-color: rgb(230, 230, 230);
 	border-bottom-color: rgb(255, 221, 142);
 	border-left-color: rgb(25, 25, 25);
 	border-right-color: rgb(139, 101, 8);
-	width: 7vw;
-	height: 7vw;
+	width: 50px;
+	height: 50px;
 	animation: loadingDavidModal 1500ms ease-in-out infinite;
 }
 
