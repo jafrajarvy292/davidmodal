@@ -67,7 +67,7 @@ To display a section of the current page within a modal window, simply give the 
 </body>
 </html>
 ```
-Note that the `showModal()` method does not require that you pass in a reference to the modal container (the one with a `davidmodal-container` class). Just pass in the element that you gave the `davidmodal` class to and the library will handle the rest.
+Note that the `showModal()` method does not require that you pass in a reference to the modal container (the one with a `davidmodal-container` class). Just pass in the element that you gave the `davidmodal` class to or any of its descendants and the library will look for the first ancestor that contains the `davidmodal-container` class and display it.
 
 ## Closing the Modal
 Every modal that is displayed can be closed via the "x" button that appears at the top-right of the window. With modals that display contents of a hyperlink as an iframe, the "x" button will cause the modal to fade out and then remove that modal from the DOM. Clicking the hyperlink will create the modal again on-the-spot. With modals that display a section of the page, the "x" button will fade out the modal, but will not remove it.
