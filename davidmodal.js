@@ -1,5 +1,5 @@
 /* Declare namespace. */
-var jafrajarvy292 = jafrajarvy292 || {};
+window.jafrajarvy292 = window.jafrajarvy292 || {};
 
 jafrajarvy292.DavidModal = class {
     /**
