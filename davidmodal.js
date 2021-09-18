@@ -203,6 +203,8 @@ jafrajarvy292.DavidModal = class {
             if (elements[i].getAttribute('href') === null &&
                 elements[i].getAttribute('data-davidmodalhref') === null) {
                 jafrajarvy292.DavidModal.privateSwapWithModal(elements[i]);
+                /* Remove the davidmodal class so that this item isn't processed again in the event the
+                init() method is re-triggered */
                 elements[i].classList.remove('davidmodal');
             /* If element has href attribute value, then the user wants to dispay this as an iframe. */
             } else {
@@ -213,6 +215,8 @@ jafrajarvy292.DavidModal = class {
                     let modalContainer = jafrajarvy292.DavidModal.privateAppendNewIframe(elements[i]);
                     jafrajarvy292.DavidModal.showModal(modalContainer);
                 });
+                /* Remove the davidmodal class so that this item isn't processed again in the event the
+                init() method is re-triggered */
                 elements[i].classList.remove('davidmodal');
             }
         }
