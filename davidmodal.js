@@ -32,7 +32,7 @@ jafrajarvy292.DavidModal = class {
      * @returns {String} Background color value
      */
     static privateGetBodyBgColor()
-    {
+    {        
         /* Browsers will vary in what value is used for when the background-color is transparent, so we create
         a test element and grab its background-color value. This value is what the current browser uses to
         indicate a transparent color. */
@@ -108,7 +108,7 @@ jafrajarvy292.DavidModal = class {
         //Append the current element to the content container. In other words, "move" it into there
         modalContent.appendChild(element);
 
-        /* Finally, set the current element's display value to its default, just in case it was being hidden.
+        /* Set the current element's display value to its default, just in case it was being hidden.
         This will ensure it can be seen when the modal container is faded in  */
         element.style.display = 'initial';
     }
@@ -186,11 +186,15 @@ jafrajarvy292.DavidModal = class {
 
     /**
      * Looks for all elements with a "davidmodal" class and prepares them for use with our library. This
-     * needs to be ran just aftr the DOM is loaded and ran on every page where our library is being used
+     * needs to be ran just after the DOM is loaded and ran on every page where our library is being used
+     * You normally won't need to manually run this, as it's automatically ran once this script file
+     * is loaded
      */
     static init() {
         //Loops through all elements that have a class of "davidmodal"
-        let elements = document.getElementsByClassName('davidmodal');
+        //let elements = document.getElementsByClassName('davidmodal');
+        let elements = document.querySelectorAll('.davidmodal');
+        //while (elements.length > 0) {
         for (let i = 0; i < elements.length; i++) {
             /* If the element does not have an href nor a data-davidmodalhref attribute value,
             then user likely wants to display the container within a modal. We'll swap out the
@@ -199,6 +203,7 @@ jafrajarvy292.DavidModal = class {
             if (elements[i].getAttribute('href') === null &&
                 elements[i].getAttribute('data-davidmodalhref') === null) {
                 jafrajarvy292.DavidModal.privateSwapWithModal(elements[i]);
+                elements[i].classList.remove('davidmodal');
             /* If element has href attribute value, then the user wants to dispay this as an iframe. */
             } else {
                 /* Add event listener to each of these elements. When element is clicked, the modal
@@ -208,6 +213,7 @@ jafrajarvy292.DavidModal = class {
                     let modalContainer = jafrajarvy292.DavidModal.privateAppendNewIframe(elements[i]);
                     jafrajarvy292.DavidModal.showModal(modalContainer);
                 });
+                elements[i].classList.remove('davidmodal');
             }
         }
     }
