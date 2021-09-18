@@ -21,7 +21,7 @@ The stylesheet must be imported. The script file must be imported towards the en
 ```
 The script is run when the page is fully loaded (i.e. DOMContentLoaded). The script will look for all elements with a class of `davidmodal` and apply the necessary preparations to them. Mainly, it will look for 2 types of elements:
 1. Those elements containing a `davidmodal` class but no href attribute will be prepared such that you'll be able to unhide these elements and have them displayed within a modal window. Closing the modal simply hides them again.
-2. Those elements containing a `davidmodal` class with an href attribute will have `click` event listeners added to them. When the user clicks these elements/links, an iframe will be created on-the-spot and the contents of the destination URL loaded into it. When the user closes the iframe, the iframe is removed entirely from the DOM. Clicking the element/link again will once again re-create the iframe and so on.
+2. Those elements containing a `davidmodal` class with an href attribute will have `click` event listeners added to them. When the user clicks these elements/links, an iframe will be created on-the-spot and the contents of the destination URL loaded into it. When the user closes the modal, the iframe is removed entirely from the DOM. Clicking the element/link again will once again re-create the iframe and so on.
 
 This library uses a namespace of `jafrajarvy292` and a class name of `DavidModal`. This library uses all static methods, so there will never be a need to create an instance of the class.  To call any of its methods, you'd use a syntax like the following:
 `jafrajarvy292.DavidModal.showModal(element);`
