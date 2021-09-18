@@ -84,7 +84,9 @@ In this use case, the script will attempt to locate the modal that is currently 
 Like the prior method, if the modal element is not specified, the script is almost guaranteed to target the correct element.
 - `jafrajarvy292.DavidModal.removeModal(object = undefined)` - This will remove the target modal from the DOM immediately. There will not be any fade out effect. This method is intended to be used with modals that display a URL as an iframe.
 
-To reiterate, these methods don't require that you pass in an element. Since only one modal window can be displayed at a time, if you do not pass in an element, the library will search for the modal currently being displayed and apply the method to that.
+For all of these methods, the optional object/element you're passing in as an argument should be the element you assigned a `davidmodal` class or any of its children.
+
+To reiterate, these methods don't require that you pass in an element, at all. Since only one modal window can be displayed at a time, if you do not pass in an element, the library will search for the modal currently being displayed and apply the method to that.
 
 ## Closing the Modal from the Child Window
 In scenarios where a hyperlink is being displayed as a modal window (i.e. via iframe), you may sometimes want to close the modal through an event listener attached to the child/iframe. To do that, you'll need to call the method through the parent window. Below is an example method you'd call from within the child window to force the parent window to run the `hideRemoveModal()` method:
