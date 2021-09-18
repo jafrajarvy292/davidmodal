@@ -71,7 +71,7 @@ To display a section of the current page within a modal window, simply give the 
 </body>
 </html>
 ```
-In the event that you are unable to run `showModal()` directly on the element with the `davidmodal` class, you can run it again any of the element's children. The function will automatically search for the nearest ancestor that it recognizes as a modal for this library and display it.
+In the event that you are unable to run `showModal()` directly on the element with the `davidmodal` class, you can run it against any of the element's children. The function will automatically search for the nearest ancestor that it recognizes as a modal for this library and display it.
 
 ## Closing the Modal
 Every modal that is displayed can be closed via the "x" button that appears at the top-right of the window. With modals that display contents of a hyperlink as an iframe, the "x" button will cause the modal to fade out and then remove that iframe from the DOM. Clicking the hyperlink will create the modal again on-the-spot. With modals that display a section of the page, the "x" button will fade out the modal and hide it, but will not remove it.
@@ -83,7 +83,7 @@ The library comes with several methods that can be called to trigger "close" beh
 - `jafrajarvy292.DavidModal.hideRemoveModal(object = undefined, callback = undefined)` - This will fade out the target modal, then remove it from the DOM. If a callback function is passed in, it will run the callback after the fade out animation is complete. This method is intended to be used with modals that display a URL as an iframe.
 - `jafrajarvy292.DavidModal.removeModal(object = undefined)` - This will remove the target modal from the DOM immediately. There will not be any fade out effect. This method is intended to be used with modals that display a URL as an iframe.
 
-For all of these methods, the optional object/element you're passing in as an argument should be the element you assigned a `davidmodal` class. If you are not able to pass in this element, you can pass in one of its children, instead, and the library will detect the nearest applicable ancestor to apply the action to.
+For all of these methods, the optional object/element you're passing in as an argument should be the element you've assigned a `davidmodal` class. If you are not able to pass in this element, you can pass in one of its children, instead, and the library will detect the nearest applicable ancestor to apply the action to.
 
 Lastly, these methods don't require that you pass in an object/element, at all. Since only one modal window can be displayed at a time, if you do not pass in an element, the library will search for the modal currently being displayed and apply the method to that.
 
