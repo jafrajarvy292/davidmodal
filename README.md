@@ -2,7 +2,7 @@
 Yet another plugin for modal windows. I created this because I was having a hard time finding a library that didn't rely on jquery. This one uses plain javascript, so no jquery or other libraries needed. All the interesting names were already taken, so I just named this after myself and called it a day.
 
 This library can do 2 things:
-- Allows you to display a hyperlink within a modal window when the user clicks it. This overrides the default browser behavior where clicking a hyperlink navigates the browser to the URL.
+- Allows you to display a hyperlink's destination within a modal window when the user clicks the link. This is done by creating an iframe. This overrides the default browser behavior where clicking a hyperlink navigates the browser to the URL.
 - Allows you to display a section of the page within a modal window. That is, when an event is triggered, it can unhide a portion of the page and display it within a modal.
 
 ## Setup
