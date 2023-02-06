@@ -1,4 +1,6 @@
 # davidmodal
+[Sample the plugin here](https://sample.asuscomm.com/davidmodal_sample)
+
 Yet another plugin for modal windows. I created this because I was having a hard time finding a library that didn't rely on jquery. This one uses plain javascript, so no jquery or other libraries needed. All the interesting names were already taken, so I just named this after myself and called it a day.
 
 This library can do 2 things:
